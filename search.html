@@ -1,0 +1,233 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="form.js"></script>
+	</head>
+	<body>
+		<!-- 选择查询项目 开始 -->
+		<form> 
+			请选择您要查询的项目：
+			<select onchange="showForm(this.value)">
+				<option value="none">请选择项目</option>
+				<option value="clxq">车辆详情</option>
+				<option value="fmxx">负面信息</option>
+				<option value="grss">个人涉诉</option>
+				<option value="qygssj">企业工商数据</option>
+				<option value="qyss">企业涉诉</option>
+				<option value="sjhzwsc">手机号在网时长</option>
+				<option value="sjhzt">手机号状态</option>
+				<option value="ylsys">银联四要素</option>
+				<option value="yyssys">运营商三要素</option>
+				<option value="dcjd">多重借贷</option>
+				<option value="grmxqy">个人名下企业</option>
+				<option value="grxyyz">个人信用验证</option>
+				<option value="ylshposbg">银联商户post报告</option>
+			</select>
+		</form>
+		<!-- 选择查询项目 结束 -->
+		<!-- 车辆详情 开始 -->
+		<div id="clxq" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>车辆详情</legend>
+					<input type="hidden" name="api" value="clxq">
+					车架号：
+					<input type="text" name="VIN">
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 车辆详情 结束 -->
+		<!-- 负面信息 开始 -->
+		<div id="fmxx" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>负面信息</legend>
+					<input type="hidden" name="api" value="fmxx">
+					姓名：
+					<input type="text" name="name">
+					身份证号：
+					<input type="text" name="idCard">
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 负面信息 结束 -->
+		<!-- 个人涉诉（全类） 开始 -->
+		<div id="grss" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>个人涉诉（全类）</legend>
+					<input type="hidden" name="api" value="grss">
+					姓名：
+					<input type="text" name="name">
+					身份证号：
+					<input type="text" name="idCard">
+					<input type="hidden" name="dataType" value="all">
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 个人涉诉（全类） 结束 -->
+		<!-- 企业工商数据 开始 -->
+		<div id="qygssj" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>企业工商数据</legend>
+					<input type="hidden" name="api" value="qygssj">
+					关键字（输入企业名称或工商注册号）：
+					<input type="text" name="key">
+					<br />
+					关键字类型：
+					<input type="radio" name="keyType" value="NAME">企业名称
+					<input type="radio" name="keyType" value="REGISTER_NUMBER">工商注册号
+					<br />
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 企业工商数据 结束 -->
+		<!-- 企业涉诉 开始 -->
+		<div id="qyss" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>企业涉诉</legend>
+					<input type="hidden" name="api" value="qyss">
+					企业名称：
+					<input type="text" name="enterpriseName">
+					<br />
+					<input type="hidden" name="dataType" value="all">
+					企业组织机构代码（选填）：
+					<input type="text" name="enterpriseNumber">
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 企业涉诉 结束 -->
+		<!-- 手机号在网时长 开始 -->
+		<div id="sjhzwsc" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>手机号在网时长</legend>
+					<input type="hidden" name="api" value="sjhzwsc">
+					手机号码：
+					<input type="text" name="mobile">
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 手机号在网时长 结束 -->
+		<!-- 手机号状态 开始 -->
+		<div id="sjhzt" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>手机号状态</legend>
+					<input type="hidden" name="api" value="sjhzt">
+					手机号码：
+					<input type="text" name="mobile">
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 手机号状态 结束 -->
+		<!-- 银联四要素 开始 -->
+		<div id="ylsys" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>银联四要素</legend>
+					<input type="hidden" name="api" value="ylsys">
+					姓名：
+					<input type="text" name="name">
+					身份证号码：
+					<input type="text" name="idCard">
+					银联卡号：
+					<input type="text" name="accountNo">
+					银行卡绑定的手机号：
+					<input type="text" name="bankPreMobile">
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 银联四要素 结束 -->
+		<!-- 运营商三要素 开始 -->
+		<div id="yyssys" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>运营商三要素</legend>
+					<input type="hidden" name="api" value="yyssys">
+					姓名：
+					<input type="text" name="name">
+					身份证号码：
+					<input type="text" name="idCard">
+					手机号：
+					<input type="text" name="mobile">
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 运营商三要素 结束 -->		
+		<!-- 多重借贷 开始 -->
+		<div id="dcjd" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>多重借贷</legend>
+					<input type="hidden" name="api" value="dcjd">
+					手机号码：
+					<input type="text" name="phone">
+					<br />
+					时间段（单位：月）：
+					<input type="text" name="cycle">
+					<br />
+					平台类型：
+					<input type="radio" name="platform" value="0">全部
+					<input type="radio" name="platform" value="1">银行
+					<input type="radio" name="platform" value="2">非银行
+					<br />
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 多重借贷 结束 -->
+		<!-- 个人名下企业 开始 -->
+		<div id="grmxqy" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>个人名下企业</legend>
+					<input type="hidden" name="api" value="grmxqy">
+					身份证号码：
+					<input type="text" name="key">
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 个人名下企业 结束 -->		
+		<!-- 个人信用验证 开始 -->
+		<div id="grxyyz" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>个人信用验证</legend>
+					<input type="hidden" name="api" value="grxyyz">
+					身份证号：
+					<input type="text" name="idCard">
+					姓名：
+					<input type="text" name="name">
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 个人信用验证 结束 -->
+		<!-- 银联商户pos报告 开始 -->
+		<div id="ylshposbg" style="display:none">
+			<form action="search.php" method="GET">
+				<fieldset>
+				<legend>银联商户pos报告</legend>
+					<input type="hidden" name="api" value="ylshposbg">
+					POS单上商户编号（最多可输入5个编号，以英文逗号隔开）：
+					<input type="text" name="merchantNo">
+					<input type="submit" value="提交">
+				</fieldset>
+			</form>
+		</div>
+		<!-- 银联商户pos报告 结束 -->		
+	</body>
+</html>
