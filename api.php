@@ -73,16 +73,16 @@ class Api
 				return 'http://tianxingshuke.com/api/rest/operators/auth/3element?';//运营商三要素
 				break;		
 			case 'dcjd':
-				return 'http://search.tianxingshuke.com/api/rest/riskTip/lending/multipleV2';//多重借贷
+				return 'http://search.tianxingshuke.com/api/rest/riskTip/lending/multipleV2?';//多重借贷
 				break;
 			case 'grmxqy':
-				return 'http://tianxingshuke.com/api/rest/enterprise/member';//个人名下企业
+				return 'http://tianxingshuke.com/api/rest/enterprise/member?';//个人名下企业
 				break;
 			case 'grxyyz':
-				return 'http://tianxingshuke.com/api/rest/riskTip/blackInfo';//个人信用验证
+				return 'http://tianxingshuke.com/api/rest/riskTip/blackInfo?';//个人信用验证
 				break;
 			case 'ylshposbg':
-				return 'http://tianxingshuke.com/api/rest/unionpay/report/businessV2 ';//银联商户pos报告查询
+				return 'http://tianxingshuke.com/api/rest/unionpay/report/businessV2?';//银联商户pos报告查询
 				break;
 			default:
 				# code...
